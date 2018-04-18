@@ -1,12 +1,20 @@
 # Configuration
 
-You'll need HTTP Basic Authentication in order to use *gatsby-source-drupal*!
+Example:
 
+## .env
+```
+DRUPAL_USER=Username
+DRUPAL_PASSWORD=P4s5w0r|)
+DRUPAL_URL=localhost
+```
+
+## gatsby-config.js
 ```
 {
   resolve: 'gatsby-source-drupal',
   options: {
-    baseUrl: 'http://<admin_user>:<admin_password>@localhost:8080',
+    baseUrl: 'http://${DRUPAL_USER}:${DRUPAL_PASSWORD}@${DRUPAL_URL}',
   },
 },
 ```
