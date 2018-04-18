@@ -1,3 +1,11 @@
+require('dotenv').config()
+
+const {
+  DRUPAL_USER,
+  DRUPAL_PASSWORD,
+  DRUPAL_URL,
+} = process.env
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
@@ -7,7 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-drupal',
       options: {
-        baseUrl: 'http://root:root@localhost:8080',
+        baseUrl: `http://${DRUPAL_USER}:${DRUPAL_PASSWORD}@${DRUPAL_URL}`,
       },
     },
   ],
